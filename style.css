@@ -1,0 +1,167 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+/* body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+} */
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+:root {
+    --Cyan: hsl(179, 62%, 43%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    --Light-Gray: hsl(204, 43%, 93%);
+    --Grayish-Blue: hsl(218, 22%, 67%);
+    --light-cyan: #4ABEBD;
+}
+
+/* General */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Light-Gray);
+}
+
+.container {
+    max-width: 43em;
+    display: grid;
+    overflow: hidden;
+    border-radius: 0.5em;
+    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.1);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template:
+        "join join"
+        "subscription about";
+}
+
+.area {
+    padding: 2em 3em;
+    background-color: var(--bg, white);
+    color: var(--fg, var(--Grayish-Blue));
+}
+
+.join {
+    grid-area: join;
+    --fg: var(--Grayish-Blue);
+}
+
+.join h1 {
+    color: var(--Cyan);
+    font-size: 1.5rem;
+}
+
+.join h2 {
+    color: var(--Bright-Yellow);
+    font-size: 1rem;
+}
+
+.subscription {
+    grid-area: subscription;
+    --bg: var(--Cyan);
+    --fg: white;
+}
+
+.subscription h1 {
+    font-size: 1.5rem;
+}
+
+.subscription h2 {
+    line-height: 0.2;
+    font-size: 2em;
+}
+
+.subscription span {
+    color: var(--Light-Gray);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 0.5em;
+}
+
+.subscription button {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    background-color: var(--Bright-Yellow);
+    color: white;
+    border: none;
+    padding: 0.8em 2em;
+    border-radius: 0.3em;
+    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.1);
+}
+
+.about {
+    grid-area: about;
+    --bg: var(--light-cyan);
+    --fg: white;
+}
+
+.about h1 {
+    font-size: 1.5em;
+}
+
+@media all and (max-width: 800px) {
+    .wrapper {
+
+        padding: 3em 2em;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template:
+            "join"
+            "subscription"
+            "about";
+    }
+
+    .area {
+        border: ;
+    }
+}
